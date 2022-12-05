@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+    transition: .5s;
+
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    /* Primary */
+    --bright-blue: hsl(220, 98%, 61%);
+    --check-background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+    /* Light Theme */
+    --light-theme-very-light-gray: hsl(0, 0%, 98%);
+    --light-theme-very-light-grayish-blue: hsl(236, 33%, 92%);
+    --light-theme-light-grayish-blue: hsl(233, 11%, 84%);
+    --light-theme-dark-grayish-blue: hsl(236, 9%, 61%);
+    --light-theme-very-dark-grayish-blue: hsl(235, 19%, 35%);
+
+    /* Dark Theme */
+    --dark-theme-very-dark-blue: hsl(235, 21%, 11%);
+    --dark-theme-very-dark-desaturated-blue: hsl(235, 24%, 19%);
+    --dark-theme-light-grayish-blue: hsl(234, 39%, 85%);
+    --dark-theme-light-grayish-blue-hover: hsl(236, 33%, 92%);
+    --dark-theme-dark-grayish-blue: hsl(234, 11%, 52%);
+    --dark-theme-very-dark-grayish-blue: hsl(233, 14%, 35%);
+    --dark-theme-very-dark-grayish-blue2: hsl(237, 14%, 26%);
+
+    --border-radius: .5rem;
+
+    --todo-list-item-padding: 1.6rem 2rem;
+}
+
+img {
+    display: block;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    border: none;
+
+    background-color: transparent;
+
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+
+    background-color: var(--light-theme-very-light-gray);
+
+    min-height: 100vh;
+
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.body.dark {
+    background-color: var(--dark-theme-very-dark-blue)
+}
+
+/* Header */
+.header__picture__img {
+    width: 100%;
+}
+
+/* Main */
+.main {
+    position: absolute;
+    top: 3rem;
+
+    width: 88%;
+}
+
+/* Main header */
+.main__header {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.main__header__todo {
+    font-size: 3rem;
+    letter-spacing: .3rem;
+    color: white;
+}
+
+.main__header__button {
+    border: none;
+
+    background-color: transparent;
+}
+
+/* Main todo input */
+.main__todo-input {
+    position: relative;
+}
+
+.main__todo-input__input {
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: var(--border-radius);
+    width: 100%;
+    padding: var(--todo-list-item-padding);
+
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.main__todo-input__input:focus {
+    outline: none;
+}
+
+.main__todo-input__input.dark {
+    background-color: var(--dark-theme-very-dark-desaturated-blue);
+
+    color: var(--dark-theme-light-grayish-blue);
+}
+
+/* Main todo list */
+.main__todo-list {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 2rem;
+    border-radius: var(--border-radius);
+
+    background-color: white;
+}
+
+.main__todo-list.dark {
+    background-color: var(--dark-theme-very-dark-desaturated-blue);
+}
+
+/* Main todo list item */
+.main__todo-list__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: .1rem solid var(--light-theme-light-grayish-blue);
+    padding: var(--todo-list-item-padding);
+
+    font-size: 1.2rem;
+    color: var(--light-theme-very-dark-grayish-blue);
+}
+
+.main__todo-list__item.dark {
+    border-bottom: .1rem solid var(--dark-theme-very-dark-grayish-blue);
+
+    color: var(--dark-theme-light-grayish-blue);
+}
+
+/* Main todo list footer */
+.main__todo-list__footer {
+    display: flex;
+    justify-content: space-between;
+
+    padding: var(--todo-list-item-padding);
+}
+
+.main__todo-list__footer__remainder {
+    font-size: 1.3rem;
+    color: var(--light-theme-dark-grayish-blue);
+}
+
+.main__todo-list__footer__clear {
+    font-size: 1.3rem;
+    color: var(--light-theme-dark-grayish-blue);
+}
+
+/* Main todo list checkbox and task */
+.main__todo-list__checkbox-and-task {
+    display: flex;
+    align-items: center;
+}
+
+.main__todo-list__checkbox-and-task__task.checked {
+    opacity: .3;
+
+    text-decoration: line-through;
+}
+
+.main__todo-list__checkbox-and-task__checkbox {
+    margin-right: 1.2rem;
+}
+
+.main__todo-list__button {
+    border: none;
+
+    background-color: transparent;
+}
+
+.main__todo-list__button__cross {
+    width: 90%;
+    height: auto;
+}
+
+/* Status Div */
+.status-div {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+
+    margin-bottom: 4rem;
+    border-radius: var(--border-radius);
+
+    background-color: white;
+}
+
+.status-div.dark {
+    background-color: var(--dark-theme-very-dark-desaturated-blue);
+}
+
+.status-div__mobile {
+    padding: 1.5rem 0rem;
+}
+
+.status-div__button {
+    font-weight: 700;
+    color: var(--light-theme-dark-grayish-blue);
+}
+
+.status-div__button.active {
+    color: var(--bright-blue);
+}
+
+.main__instructions {
+    font-size: 1.4rem;
+    text-align: center;
+    color: var(--light-theme-dark-grayish-blue)
+}
+
+.main__instructions.dark {
+    color: var(--dark-theme-dark-grayish-blue);
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 31rem) {
+    /* Header */
+    .header {
+        width: 100%;
+    }
+
+    /* Main */
+    .main {
+        top: 6rem;
+
+        width: auto;
+        min-width: 50rem;
+    }
+
+    /* Main header */
+    .main__header__todo {
+        font-size: 3.5rem;
+        letter-spacing: 1.3rem;
+    }
+
+    .main__header__todo:hover {
+        cursor: pointer;
+    }
+
+    .main__header__button:hover {
+        cursor: pointer;
+    }
+
+    /* Main todo input */
+    .main__todo-input__input {
+        font-size: 1.6rem;
+    }
+
+    /* Main todo list item */
+    .main__todo-list__item {
+        font-size: 1.6rem;
+    }
+
+    /* Main todo list checkbox and task */
+    .main__todo-list__checkbox-and-task__checkbox {
+        margin-right: 2rem;
+    }
+
+    .main__todo-list__checkbox-and-task__checkbox:hover {
+        cursor: pointer;
+    }
+
+    .main__todo-list__checkbox-and-task__task:hover {
+        cursor: pointer;
+    }
+
+    .main__todo-list__button:hover {
+        cursor: pointer;
+    }
+
+    /* Main todo list footer */
+    .main__todo-list__footer__clear:hover {
+        cursor: pointer;
+    }
+
+    /* Status div */
+    .status-div {
+        margin-bottom: 0rem;
+    }
+
+    .status-div__button:hover {
+        cursor: pointer;
+
+        color: var(--light-theme-very-dark-grayish-blue);
+    }
+}
