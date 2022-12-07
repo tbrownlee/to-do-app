@@ -196,7 +196,6 @@ function App() {
         window.location.reload();
     }
 
-    document.title = 'To Do App';
 
 
 
