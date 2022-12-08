@@ -44,12 +44,8 @@ let initalTodos = [
 
 
 
-
 const LOCAL_STORAGE_KEY = 'todoApp.todos';
-
 const LIGHT_THEME = 'lightTheme';
-
-
 
 
 
@@ -129,23 +125,6 @@ function App() {
         return window.innerWidth > 865;
     }
 
-    /* Set mobile state if mobile, detoggles if desktop. Vice versa for desktop */
-    /*
-    React.useEffect(() => {
-        function handleResize() {
-            if (isMobile()) {
-                setMobileVisible(true);
-                setDesktopVisible(false);
-            } else if (isDesktop()) {
-                setMobileVisible(false);
-                setDesktopVisible(true);
-            }
-        }
-
-        window.addEventListener('resize', handleResize);
-    })
-    */
-
 
 
     /* Adds input to todoList */
@@ -169,6 +148,8 @@ function App() {
         }
     }
 
+
+
     function deleteTodo(id) {
         setTodos(previous => {
             return previous.filter(todo => todo.id != id);
@@ -187,6 +168,8 @@ function App() {
         });
     }
 
+
+
     function planetClick() {
         setLightTheme(!lightTheme);
     }
@@ -199,11 +182,11 @@ function App() {
         setTodosLeft(todos.filter(todo => !todo.checked).length);
     }
 
-
-
     function reload() {
         window.location.reload();
     }
+
+
 
     useEffect(() => {
         setTimeout(() => {
@@ -244,8 +227,6 @@ function App() {
         window.addEventListener('resize', handleResize);
     })
     
-    
-
 
     return (
         <div className={`body ${lightTheme ? '' : 'dark'}`}>
