@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Header from './components/header.js';
 
@@ -45,10 +45,17 @@ let initalTodos = [
 
 
 
+const LOCAL_STORAGE_KEY = 'todoApp.todos';
+
+const LIGHT_THEME = 'lightTheme';
+
+
+
+
 
 function App() {
     /* State */
-    const [todos, setTodos] = useState(initalTodos);
+    const [todos, setTodos] = useState([]);
 
     const [mobileVisible, setMobileVisible] = useState(isMobile() ? true : false);
     const [desktopVisible, setDesktopVisible] = useState(isDesktop() ? true : false);
@@ -77,7 +84,7 @@ function App() {
         })
     }
 
-    
+
 
     /* Functions to change display */
     function allClick() {
@@ -123,6 +130,7 @@ function App() {
     }
 
     /* Set mobile state if mobile, detoggles if desktop. Vice versa for desktop */
+    /*
     React.useEffect(() => {
         function handleResize() {
             if (isMobile()) {
@@ -136,6 +144,7 @@ function App() {
 
         window.addEventListener('resize', handleResize);
     })
+    */
 
 
 
@@ -196,7 +205,46 @@ function App() {
         window.location.reload();
     }
 
+    useEffect(() => {
+        setTimeout(() => {
+            updateCheckedNum();
+        }, 1);
+    });
 
+    useEffect(() => {
+        const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+        if(storedTodos.length > 0) {
+            setTodos(storedTodos);
+        } else {
+            setTodos(initalTodos);
+        }
+        const light = JSON.parse(localStorage.getItem(LIGHT_THEME));
+        setLightTheme(light);
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
+    }, [todos])
+
+    useEffect(() => {
+        localStorage.setItem(LIGHT_THEME, JSON.stringify(lightTheme))
+    }, [lightTheme])
+    
+    useEffect(() => {
+        function handleResize() {
+            if (isMobile()) {
+                setMobileVisible(true);
+                setDesktopVisible(false);
+            } else if (isDesktop()) {
+                setMobileVisible(false);
+                setDesktopVisible(true);
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+    })
+    
+    
 
 
     return (
