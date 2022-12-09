@@ -193,6 +193,7 @@ function App() {
             updateCheckedNum();
         }, 1);
     });
+    */
 
     useEffect(() => {
         const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
@@ -212,7 +213,7 @@ function App() {
     useEffect(() => {
         localStorage.setItem(LIGHT_THEME, JSON.stringify(lightTheme))
     }, [lightTheme])
-    */
+    
 
     
     
