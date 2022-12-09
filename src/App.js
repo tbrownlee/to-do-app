@@ -67,6 +67,10 @@ function App() {
 
 
     function updateCheckedNum() {
+        setTodos(() => {
+            return [...todos];
+        })
+
         setTodosLeft(() => {
             return todos.filter(todo => !todo.checked).length;
         })
