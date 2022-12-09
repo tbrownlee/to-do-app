@@ -187,16 +187,17 @@ function App() {
     }
 
 
-/*
+
     useEffect(() => {
         setTimeout(() => {
             updateCheckedNum();
         }, 1);
     });
-    */
 
     useEffect(() => {
         const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+        console.log('storedTodos: ' + storedTodos !== null);
+        console.log('length: ' + storedTodos.length !== null)
         if(storedTodos.length > 0) {
             setTodos(storedTodos);
         } else {
