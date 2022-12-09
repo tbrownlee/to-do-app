@@ -187,7 +187,7 @@ function App() {
     }
 
 
-
+/*
     useEffect(() => {
         setTimeout(() => {
             updateCheckedNum();
@@ -212,6 +212,7 @@ function App() {
     useEffect(() => {
         localStorage.setItem(LIGHT_THEME, JSON.stringify(lightTheme))
     }, [lightTheme])
+    */
 
     
     
