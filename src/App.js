@@ -196,15 +196,13 @@ function App() {
 
     useEffect(() => {
         const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-        console.log('storedTodos: ' + storedTodos !== null);
-        /*
-        console.log('length: ' + storedTodos.length !== null);
-        if(storedTodos.length > 0) {
+        
+        if(storedTodos) {
             setTodos(storedTodos);
         } else {
             setTodos(initalTodos);
         }
-        */
+        
         const light = JSON.parse(localStorage.getItem(LIGHT_THEME));
         setLightTheme(light);
     }, []);
