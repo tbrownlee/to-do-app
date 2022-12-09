@@ -197,7 +197,7 @@ function App() {
     useEffect(() => {
         const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
         
-        if(storedTodos) {
+        if(storedTodos.length > 0) {
             setTodos(storedTodos);
         } else {
             setTodos(initalTodos);
