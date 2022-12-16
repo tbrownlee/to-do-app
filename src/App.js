@@ -51,7 +51,9 @@ const LIGHT_THEME = 'lightTheme';
 
 function App() {
     /* State */
-    const [todos, setTodos] = useState([]);
+
+    /* Change this back to useState([]) */
+    const [todos, setTodos] = useState(initalTodos);
 
     const [mobileVisible, setMobileVisible] = useState(isMobile() ? true : false);
     const [desktopVisible, setDesktopVisible] = useState(isDesktop() ? true : false);
@@ -199,6 +201,7 @@ function App() {
     });
 
     useEffect(() => {
+        /*
         const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
         
         if(storedTodos.length > 0) {
@@ -206,6 +209,7 @@ function App() {
         } else {
             setTodos(initalTodos);
         }
+        */
         
         const light = JSON.parse(localStorage.getItem(LIGHT_THEME));
         setLightTheme(light);
