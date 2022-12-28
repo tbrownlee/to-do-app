@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/tbrownlee/to-do-app)
-- Live Site URL: [Add live site URL here](https://tbrownlee.github.io/to-do-app/)
+- Solution URL: https://github.com/tbrownlee/to-do-app
+- Live Site URL: https://tbrownlee.github.io/to-do-app/
 
 ## My process
 
