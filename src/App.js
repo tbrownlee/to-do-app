@@ -200,17 +200,7 @@ function App() {
         }, 1);
     });
 
-    useEffect(() => {
-        /*
-        const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-        
-        if(storedTodos.length > 0) {
-            setTodos(storedTodos);
-        } else {
-            setTodos(initalTodos);
-        }
-        */
-        
+    useEffect(() => {      
         const light = JSON.parse(localStorage.getItem(LIGHT_THEME));
         setLightTheme(light);
     }, []);
