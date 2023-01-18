@@ -233,7 +233,7 @@ function App() {
 
     return (
         <div className={`body ${lightTheme ? '' : 'dark'}`}>
-            <Header lightTheme={lightTheme} />
+            <Header lightTheme={lightTheme} /> 
             <main className='main'>
                 <header className='main__header'>
                     <h1 className='main__header__todo' onClick={reload}>TODO</h1>
@@ -242,7 +242,7 @@ function App() {
                     </button>
                 </header>
                 <div className='main__todo-input'>
-                    <input className={`main__todo-input__input ${lightTheme ? '' : 'dark'}`} placeholder='Create a new todo...' onKeyPress={handleEnterPress}></input>
+                    <input className={`main__todo-input__input ${lightTheme ? '' : 'dark'}`} placeholder='Create a new todo...' onKeyDown={handleEnterPress}></input>
                 </div>
                 <ul className={`main__todo-list ${lightTheme ? '' : 'dark'}`}>
                     <TodoList todos={returnDisplay()} deleteTodo={deleteTodo} lightTheme={lightTheme} updateCheckedNum={updateCheckedNum} />
@@ -253,9 +253,6 @@ function App() {
                     </footer>
                 </ul>
                 {mobileVisible && <Status class='mobile' lightTheme={lightTheme} display={display} allClick={allClick} activeClick={activeClick} completedClick={completedClick} />}
-                {/* Drag and drop functionality is coming soon:
-                    <p className={`main__instructions ${lightTheme ? '' : 'dark'}`}>Drag and drop to reorder list</p>
-                */}
             </main>
         </div >
     )
