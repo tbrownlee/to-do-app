@@ -51,8 +51,6 @@ const LIGHT_THEME = 'lightTheme';
 
 function App() {
     /* State */
-
-    /* Change this back to useState([]) */
     const [todos, setTodos] = useState(initalTodos);
 
     const [mobileVisible, setMobileVisible] = useState(isMobile() ? true : false);
