@@ -259,14 +259,14 @@ button {
 
 
 
-
-
-
-
 @media only screen and (min-width: 31rem) {
     /* Header */
     .header {
         width: 100%;
+    }
+
+    .header__picture__img {
+        height: 32rem;
     }
 
     /* Main */
@@ -274,7 +274,6 @@ button {
         margin-top: 6rem;
         margin-bottom: 6rem;
         width: auto;
-        min-width: 50rem;
     }
 
     /* Main header */
@@ -332,5 +331,15 @@ button {
         cursor: pointer;
 
         color: var(--light-theme-very-dark-grayish-blue);
+    }
+}
+
+
+
+
+
+@media only screen and (min-width: 33rem) {
+    .main {
+        min-width: 50rem;
     }
 }
